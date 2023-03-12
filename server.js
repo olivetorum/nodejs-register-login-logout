@@ -8,9 +8,9 @@ const jwt = require('jsonwebtoken')
 
 require('dotenv').config();
 const jwtSecret= process.env.JWT_SECRET
-const mongoPassword = process.env.MONGO_PASSWORD
+const mongoConnect = process.env.MONGO_CONNECT
 
-mongoose.connect(`mongodb+srv://olivetorum:${mongoPassword}1@cluster0.1rpdflx.mongodb.net/?retryWrites=true&w=majority`)
+mongoose.connect(mongoConnect)
 const app = express()
 app.use('/', express.static(path.join(__dirname,'views')))
 app.use(express.json())
